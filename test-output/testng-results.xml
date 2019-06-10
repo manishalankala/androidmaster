@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="22825" started-at="2019-06-08T12:32:08Z" finished-at="2019-06-08T12:32:31Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="22825" started-at="2019-06-08T12:32:08Z" finished-at="2019-06-08T12:32:31Z">
+      <class name="testSuite.TestScenarios">
+        <test-method status="PASS" signature="setUpSuiteDetails()[pri:0, instance:testSuite.TestScenarios@7d9d1a19]" name="setUpSuiteDetails" is-config="true" duration-ms="123" started-at="2019-06-08T18:02:08Z" finished-at="2019-06-08T18:02:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpSuiteDetails -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testSuite.TestScenarios@7d9d1a19]" name="beforeTest" is-config="true" duration-ms="10094" started-at="2019-06-08T18:02:08Z" finished-at="2019-06-08T18:02:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:testSuite.TestScenarios@7d9d1a19]" name="BeforeClass" is-config="true" duration-ms="0" started-at="2019-06-08T18:02:18Z" finished-at="2019-06-08T18:02:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeClass -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:testSuite.TestScenarios@7d9d1a19]" name="beforeMethod" is-config="true" duration-ms="5" started-at="2019-06-08T18:02:18Z" finished-at="2019-06-08T18:02:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testSuite.TestScenarios.testCase3() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testCase3()[pri:0, instance:testSuite.TestScenarios@7d9d1a19]" name="testCase3" duration-ms="8807" started-at="2019-06-08T18:02:18Z" description="connectd device UDID and Wifi Name" finished-at="2019-06-08T18:02:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase3 -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:testSuite.TestScenarios@7d9d1a19]" name="tearDown" is-config="true" duration-ms="3905" started-at="2019-06-08T18:02:27Z" finished-at="2019-06-08T18:02:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCase3 status=SUCCESS method=TestScenarios.testCase3()[pri:0, instance:testSuite.TestScenarios@7d9d1a19] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void testSuite.TestScenarios.testCase3() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testSuite.TestScenarios@7d9d1a19]" name="afterSuite" is-config="true" duration-ms="1604" started-at="2019-06-08T18:02:31Z" finished-at="2019-06-08T18:02:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- testSuite.TestScenarios -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
