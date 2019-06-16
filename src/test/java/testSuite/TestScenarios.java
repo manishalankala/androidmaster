@@ -9,11 +9,12 @@ import org.testng.annotations.Test;
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.StartsActivity;
 import pageObjects.Locators;
+import testMethods.TestSteps;
 import utils.BaseClass;
 
 public class TestScenarios extends BaseClass{
 
-	Locators execute= new Locators();
+	TestSteps execute= new TestSteps();
 	@Test(description ="verify click and scroll/action actions")
 	public void testCae1() throws Exception{
 		execute.clickAndScroll();
