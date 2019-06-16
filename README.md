@@ -508,9 +508,13 @@ Un-check Pre-Launch Application check box if it is checked.
 
 # Automation Framework
 
-An Automation Framework is collection of concepts, assumptions and practices while developing the automation project, so it useful to constitute a work platform or support for automated testing. 
+An Automation Framework is collection of concepts, assumptions and practices while developing the automation project, 
 
-If you look into the existing framework, it will be block of function libraries for reporting, error handling, and driver scripts. So the test automation framework is an execution environment for automated tests. 
+so it useful to constitute a work platform or support for automated testing. 
+
+If you look into the existing framework, it will be block of function libraries for reporting, error handling, and driver scripts. 
+
+So the test automation framework is an execution environment for automated tests. 
 
 It is the overall system in which our tests will be automated.
 
@@ -530,56 +534,83 @@ It is the overall system in which our tests will be automated.
         
 <b>What is a Framework?</b>
 
-In general, a framework is a real or conceptual structure intended to serve as a support or guide for the building of something that expands the structure into something useful.
+In general, a framework is a real or conceptual structure intended to serve as a support or guide for the building of something that 
+expands the structure into something useful.
+
 Using Frameworks, produce beneficial outcomes like increased code re-usage, higher portability, reduced script maintenance cost, higher code readability, etc. 
-Prior to knowing about the Hybrid Test Automation Framework, we should know about the existing frameworks. Generally we have,
+
+Prior to knowing about the Hybrid Test Automation Framework, we should know about the existing frameworks.
+
+Generally we have,
     • Data Driven Framework
     • Hybrid Framework
     
 <b>Why do we need Automation framework?</b>
 
 Using Framework, we can solve many issues like
+
     • Writing code once and reusing it. Significant Reduction in Testing Cycle Time
+    
     • Running the script with different set of data.
+    
     • Executing the scripts end-to-end without any manual intervention. ( If any error occurs from tool or application, Script run will stop. If we use framework, it will skip or fail that test case and run with the next test case.)
+    
     • With basic knowledge on tool also anyone can run and write the script. 
+    
     • Maintenance becomes very easy.
     
     
     
 Combination of above all framework is nothing but Hybrid Driven Framework.
+
 Example: In the application, We have 5 scenarios.
 
     • login with out using password
+    
     • login with wrong password
+    
     • login with valid Credentials 
+    
     • logout and relogin with same credentials
+    
     • log out and verify fogot password link
     
 Now write a script for all 5 scenarios using any automation tool.
+
 Write a script for one time. Make it as a function and reuse the same function
+
     • Read all the scenarios.
+    
     • Identify the repeated steps.
+    
     • Convert them into function.
     
 <b>Advantages:</b>
+
     • Write once (saves time)
+    
     • Reusable
+    
     • Easy Maintenance
     
 <b>Disadvantages:</b>
+
     • Data is hard-coded, we can’t run with multiple sets of data.
     
 <b>Data Driven Framework:</b>
 
-It is a framework where test input and output values are read from data files (Excel, CSV, Database) and are loaded into variables in captured or manually coded scripts. If we see the above example, For Login(uname) we can run the script with any data picking it from excel or CSV.
+It is a framework where test input and output values are read from data files (Excel, CSV, Database) and are loaded into variables in captured or manually coded scripts. 
+
+If we see the above example, For Login(uname) we can run the script with any data picking it from excel or CSV.
 
 
 
 
 <b>Purpose:</b>
 
-To build a Hybrid Test Automation Framework which can be used across different web/Mobile based applications. With this framework in place, whenever we need to automate a web based application.
+To build a Hybrid Test Automation Framework which can be used across different web/Mobile based applications. 
+
+With this framework in place, whenever we need to automate a web based application.
 
 <b>Tools Used:</b>
 
@@ -611,6 +642,60 @@ The framework consists of the following components.
 <b>Object Repository:</b>
 
 -- Page objects we are using for the locators.
+
+
+![image](https://user-images.githubusercontent.com/33985509/59570881-d1c39880-909e-11e9-9398-cd94efab53cf.png)
+
+
+Page Object Model is a design pattern which has become popular in test automation for enhancing test maintenance and reducing code duplication. 
+
+A page object is an object-oriented class that serves as an interface to a page of your AUT.
+
+The tests then use the methods of this page object class whenever they need to interact with the UI of that page, 
+
+the benefit is that if the UI changes for the page, the tests themselves don’t need to be changed, only the code within the page object needs to change.
+
+Subsequently all changes to support that new UI are located in one place.
+
+
+Increasing automation test coverage can result in unmaintainable project structure, if locators are not managed in right way. 
+
+This can happen due to duplication of code or mainly due to duplicated usage of locators.
+
+For Example, in home page of web application we have menu bar which leads to different modules with different features.
+
+Many automation test cases would be clicking through these menu buttons to execute specific tests.
+
+Imagine that the UI is changed/revamped and menu buttons are relocated to different position in home page, this will result automation tests to fail. 
+
+Automated test cases will fail as scripts will not be able to find particular element-locators to perform action.
+
+Now, QA Engineer need to walk through whole code to update locators where necessary. 
+
+Updating element-locators in duplicated code will consume a lot of time to only adjust locators, while this time can be consumed to increase test coverage. 
+
+We can save this time by using Page Object Model in our test automation framework.
+
+
+According to Page Object Model, we should keep our tests and element locators separately, this will keep code clean and easy to understand and maintain.
+
+The Page Object approach makes test automation framework programmer friendly, more durable and comprehensive.
+
+Another important advantage is our Page Object Repository is Independent of Automation Tests. 
+
+Keeping separate repository for page objects helps us to use this repository for different purposes with different frameworks like, we are able to integrate this repository with other tools like JUnit/NUnit/PhpUnit as well as with TestNG/Cucumber/etc.
+
+Test cases become short and optimized as we are able to reuse page object methods in the POM classes.
+
+Any change in UI can easily be implemented, updated and maintained into the Page Objects and Classes.
+
+
+
+
+
+
+
+
 
 <b>Generate reports:</b>
 -- using Extent reports library we are generating reports for passed and failed test cases including screenshots
@@ -1146,3 +1231,85 @@ public void UiSCrollableByIdText(String rID, String text) {
 		}
 	}
 }
+
+
+
+
+## TestScenarios.java
+
+package testSuite;
+
+import java.util.Map;
+
+import javax.naming.Context;
+
+import org.testng.annotations.Test;
+
+import io.appium.java_client.android.Activity;
+import io.appium.java_client.android.StartsActivity;
+import pageObjects.Locators;
+import testMethods.TestSteps;
+import utils.BaseClass;
+
+public class TestScenarios extends BaseClass{
+
+	TestSteps execute= new TestSteps();
+	@Test(description ="verify click and scroll/action actions")
+	public void testCae1() throws Exception{
+		execute.clickAndScroll();
+		
+	} 
+	
+	@Test(description ="verify click and scroll/action actions")
+	public void testCase2() throws Exception{
+		execute.sorting();
+		
+	} 
+	@Test(description ="connectd device UDID and Wifi Name")
+	public void testCase3() throws Exception{
+		execute.udid_wifi();
+	//FYI https://github.com/appium/appium/issues/9698  we can't get all the udid's info need to more R&D
+	}
+}
+
+
+
+## Locators
+
+package pageObjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.FindBy;
+
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.Activity;
+import utils.BaseClass;
+
+public class Locators extends BaseClass {
+
+	public MobileElement hambergerMenu = (MobileElement) driver.findElementByXPath("//android.widget.ImageView[@content-desc='Open navigation menu']");
+
+	public MobileElement inviteFriends = (MobileElement) driver.findElementByXPath("//android.widget.TextView[@text='Invite Friends']");
+
+	public MobileElement textFields = (MobileElement) driver.findElementByClassName("android.widget.TextView");
+	public MobileElement search = (MobileElement) driver.findElementByClassName("android.widget.EditText");
+	public MobileElement contactHello = (MobileElement) driver.findElementByXPath("//android.widget.TextView[@text='HelloThere']");
+	public MobileElement contactUIa = (MobileElement) driver.findElementByXPath("//android.widget.TextView[@text='UIDAI']");
+	public MobileElement backArrow = (MobileElement) driver.findElementByXPath("//android.widget.ImageView[@content-desc='Go back']");
+
+	public MobileElement contactsMenu = (MobileElement) driver.findElementByXPath("//android.widget.TextView[@text='Contacts']");
+	public MobileElement sorting = (MobileElement) driver.findElementByXPath("//android.widget.ImageView[@content-desc='Change sorting']");
+
+	public MobileElement wifiSettings = (MobileElement) driver.findElementByXPath("//android.widget.TextView[@text='Wi‑Fi']");
+	public MobileElement connectedWifi =(MobileElement) driver.findElementByClassName("android.widget.CheckedTextView");
+	public MobileElement toggleWifi = (MobileElement) driver.findElementById("android:id/checkbox");
+			
+
+	
+
+}
+
+
+
+
