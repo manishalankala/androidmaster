@@ -47,6 +47,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -171,9 +172,9 @@ public class BaseClass {
 	 * <p>
 	 * This Method is used to click on an element using locator
 	 */
-	public void click(By locator) throws Exception {
+	public void click(MobileElement element) throws Exception {
 		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated((locator))).click();
+			element.click();
 		} catch (Exception e) {
 			throw e;
 
@@ -331,10 +332,12 @@ public void UiSCrollableByIdText(String rID, String text) {
 	 * @param locator
 	 * @return
 	 */
-	public String printText(By locator) {
-		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
+	public String printText(MobileElement element) {
+		/*String text = wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
 		System.out.println("Verified Element Text is :" + text);
-		return text;
+		return text;*/
+		String elText = element.getText();
+		return elText;
 	}
 
 	/**
