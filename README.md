@@ -13,10 +13,10 @@ http://appium.io/
 
 
 
+# Requirement
 
 
-
-
+````
 
 Using Appium with Java and any App(s) that you like, please, automate 3 test cases either on iOS or Android based on the following scenarios:
 
@@ -52,7 +52,7 @@ Tests are all green, unless there is a bug in the app.
 
 
 
-
+`````
 
 
 
