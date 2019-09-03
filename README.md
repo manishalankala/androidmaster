@@ -21,16 +21,27 @@ http://appium.io/
 Using Appium with Java and any App(s) that you like, please, automate 3 test cases either on iOS or Android based on the following scenarios:
 
 
-1. There is a drop down menu or a picker wheel, which position is flexible - can be anywhere on the screen. You have to select an element of that list, which is not visible at first, so that you have to scroll/swipe to it.
+1. There is a drop down menu or a picker wheel, 
+
+which position is flexible - can be anywhere on the screen. 
+
+You have to select an element of that list, which is not visible at first, 
+
+so that you have to scroll/swipe to it.
 
 
-2. You have a list of contact names, which has more than 15 entries and can be sorted by family name or by first name. Verify that both sorting options work. 
+2. You have a list of contact names, 
+
+which has more than 15 entries and can be sorted by family name or by first name. Verify that both sorting options work. 
 
 
 
 3. Assume there are some number of connected android devices.(One is not connected to wifi, rest are connected to the wifi)
+
 - Get all of their connected wifi network names 
+
 - Get udid of the device which is not connected to the wifi
+
 - Disable wifi of any device that is connected to the wifi
 
 
